@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Canvas Cracker",
+    "version": "1.0",
+    "description": "Add the Canvas Cracker extension to Chrome Extensions",
+    "action": {
+        "default_popup": "content/popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://*/*"
+          ]
+        }
+    ],
+      "externally_connectable": {
+        "matches": ["https://*/*"]
+    }
+}
