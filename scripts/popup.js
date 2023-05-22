@@ -70,7 +70,7 @@ async function createCompletion() {
     const response = await chrome.tabs.sendMessage(tabId, {completion: "create"});
     console.log("recieved: ", response)
     var messages = [
-        {"role": "system", "content": "You are a helpful tutoring assistant. Please help the user with their quiz. The user is having trouble with the following question:"},
+        {"role": "system", "content": "You are a helpful tutoring assistant. Please help the user with their quiz. You must think through your process step-by-step before deciding on an answer. The user is having trouble with the following question:"},
         {"role": "user", "content": response}
     ]
     streamCompletion(messages)
